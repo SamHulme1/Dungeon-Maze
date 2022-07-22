@@ -52,6 +52,9 @@
     }
  }
 
+ /**
+  * This function generates a random room in the same way as the random item is generated
+  */
  function generateRoom() {
     let randomRoom = Math.floor(Math.random()*10) +1;
     if (randomRoom === 1){

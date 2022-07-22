@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Dungeon Maze</title>
+    </head>
+    <body>
+        <h1 class="heading">
+            Dungeon Maze
+            <img class="logo" src="" alt="">
+        </h1>
+        <section class="game-output-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img id="image-output">
+                        <p id="text-output">
+                        Welcome to the game!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="game-interaction-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="health">HP: <span id="hp-remaining">5</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <button data-type="advance-onwards">click me to move to a new area</button>
+                        <button data-type="look-in-inventory">click me to check your inventory</button>
+                        <button data-type="drink-a-potion">click me to drink a potion</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button data-type="use-attack">click me to attack</button>
+                        <button data-type="use-block">click me to block</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script src="assets/js/game.js"></script>
+    </body>
+</html>
