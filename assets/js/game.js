@@ -1,54 +1,64 @@
 /** This function uses the Maths.floor and Maths.random 
  * to generate a number between 1-10 and then assign the items variable's 
- * value to it based of the results */
-let inventory = [];
-let items = '';
+ * value to it based of the results the result is then returned */
+ let inventory = [];
+ let items =[];
+ 
+ function generateItem() {
+     let randomItem = Math.floor(Math.random()*10) +1;
+     if (randomItem === 1){
+         items = 'potion';
+     } else if (randomItem === 2){
+         items = 'sword';
+     } else if (randomItem === 3){
+         items = 'axe';
+     } else if (randomItem === 4){
+         items = 'key';
+     } else {
+         items= '';
+     }
+     return items;
+ }
+ /**This function takes the generated items return value which 
+  * has been set to the items variable and adds it to the inventory.
+  */
+  function checkItemFound(){
+        
+        switch(items){
+        case items='potion':
+             console.log('potion');
+             inventory.push(items);
+         break;
+        case items='axe':
+             console.log('axe');
+              inventory.push(items);
+         break;
+         case items='sword':
+             console.log('sword');
+              inventory.push(items);
+         break;
+         default:
+             console.log('You found nothing')
+         break;
+     }
+     return inventory;
+ }
 
-function generateItem() {
-    let randomItem = Math.floor(Math.random()*10) +1;
-    if (randomItem === 1){
-        items = 'potion';
-        checkItemFound();
-    } else if (randomItem === 2){
-        items = 'sword';
-        checkItemFound();
-    } else if (randomItem === 3){
-        items = 'axe';
-        checkItemFound();
-    } else if (randomItem === 4){
-        items = 'key';
-        checkItemFound();
-    } else {
-        items= '';
-        checkItemFound();
+ /** This function is used to display the items in the users inventory */
+
+ function getInventory(){
+    for (i in inventory){
+        console.log(inventory);
     }
-}
-/**This function takes the items value from the generateItem function and then 
- * pushes the new item to the inventory.
- */
-
-function checkItemFound(){
-        
-    if (items.includes('potion')){
-         inventory.push('potion');
-        
-        
-    } else if (items.includes('sword')){
-        inventory.push('sword');
-
-    } else if (items.includes('axe')){
-        inventory.push('axe');
-        
-    } else if (items.includes('key')){
-        inventory.push('key');
-
-    } else {
-        console.log("you didn't find anything!");
-    }
-    
-}
-
-
-generateItem();
-console.log(inventory);
-console.log(items)
+ }
+         
+     
+     
+ 
+ 
+ generateItem();
+ checkItemFound();
+ getInventory();
+ generateItem();
+ checkItemFound();
+ getInventory();
