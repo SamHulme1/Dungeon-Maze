@@ -3,7 +3,7 @@
  * value to it based of the results the result is then returned */
  let inventory = [];
  let items =[];
- 
+ let room; 
  function generateItem() {
      let randomItem = Math.floor(Math.random()*10) +1;
      if (randomItem === 1){
@@ -51,6 +51,32 @@
         console.log(inventory);
     }
  }
+
+ function generateRoom() {
+    let randomRoom = Math.floor(Math.random()*10) +1;
+    if (randomRoom === 1){
+        room = 'corridoor';
+    } else if (randomRoom === 2){
+        room = 'large room';
+    } else if (randomRoom === 3){
+        room = 'small room';
+    } else if (randomRoom === 4){
+        room = 'locked door';
+    } else if (randomRoom === 5){
+        room = 'bedroom';
+    } else if (randomRoom === 6){
+        room = 'well';
+    } else if (randomRoom === 7){
+        room = 'large room 2';
+    } else if (randomRoom === 8){
+        room = 'corridoor2';
+    } else if (randomRoom === 9){
+        room = 'small room2';
+    } else {
+        room = 'cave in';
+    }
+    return room;
+}
          
      
      
@@ -62,3 +88,5 @@
  generateItem();
  checkItemFound();
  getInventory();
+ generateRoom();
+ console.log(room);
